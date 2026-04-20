@@ -1,11 +1,13 @@
-# The `my-package` Package
+# The `leipzig-university-slides` Package
 <div align="center">Version 0.1.0</div>
 
-A short description about the project and/or client.
+> This theme is **NOT** an official theme of Leipzig University.
+
+**leipzig-university-slides** is a [Polylux](https://github.com/polylux-typ/polylux) theme for creating presentation slides in [Typst](https://github.com/typst/typst). It is inspired by the presentation template provided by [Leipzig University](https://www.uni-leipzig.de/). This an **unofficial** theme and is not affiliated with Leipzig University.
 
 ## Template adaptation checklist
 
-- [ ] Fill out `README.md`
+- [x] Fill out `README.md`
   - Change the `my-package` package name, including code snippets
   - Check section contents and/or delete sections that don't apply
 - [ ] Check and/or replace `LICENSE` by something that suits your needs
@@ -30,15 +32,27 @@ A short description about the project and/or client.
 These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
 
 ```typ
-#import "@preview/my-package:0.1.0": *
+#import "@preview/leipzig-university-slides:0.1.0": *
 
-#show: my-show-rule.with()
-#my-func()
+#show: leipzig-theme.with(
+  title: [Title of the presentation],
+  author: ("Your Name",),
+  subtitle: "Seminar title (e.g. Group seminar)",
+  short-title: "Short title",
+  date: datetime(year: 2026, month: 4, day: 19),
+)
+
+#title-slide(
+  extra: [
+    Institute of Computer Science\
+    Faculty of Mathematics and Computer Science\
+    Leipzig University
+  ]
+)
 ```
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-dark.svg">
-  <img src="./thumbnail-light.svg">
+  <img src="./thumbnail.svg">
 </picture>
 
 ### Installation
@@ -63,7 +77,5 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 
 ## Additional Documentation and Acknowledgments
 
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+* inspired by [Leipzig Beamer Template](https://github.com/bmondal94/Leipzig-Beamer-Template) created by [Badal Mondal](https://github.com/bmondal94)
+* created with [typst-package-template](https://github.com/typst-community/typst-package-template)
